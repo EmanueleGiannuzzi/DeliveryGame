@@ -1,6 +1,7 @@
 shader_type spatial;
 
-uniform sampler2D _texture;
+uniform sampler2D _texture : filter_nearest; 
+
 uniform sampler2D height_map;
 uniform sampler2D normal_map;
 uniform float height_factor : hint_range(0.0, 10.0) = 2; // Adjust height effect
@@ -15,6 +16,7 @@ vec2 pointOnSphereToUV(vec3 p) {
 	
 	float u = (longitude / PI + 1.0) / 2.0;
 	float v = latitude / PI + 0.5;
+	
 	return vec2(u, v);
 }
 
@@ -25,7 +27,7 @@ void vertex() {
 	
 	vec2 uv = pointOnSphereToUV(world_position);
 	
-	if(uv.y > 0.0901 && uv.y < 0.9999) {
+	if(uv.y > 0.0001 && uv.y < 0.9999) {
 	    float height = texture(height_map, uv).r;
 	    VERTEX.xyz += NORMAL * height * height_factor;
 	}
@@ -33,10 +35,15 @@ void vertex() {
 }
 
 void fragment() {
-    vec3 object_position = (MODEL_MATRIX * vec4(FRAGCOORD.xyz, 1.0)).xyz;
     vec2 uv = pointOnSphereToUV(world_position);
 	vec4 tex_color = texture(_texture, uv);
-    ALBEDO = tex_color.rgb;
+	
+   	ALBEDO = tex_color.rgb;
 	
   	NORMAL_MAP = texture(normal_map, uv).xyz;
 }
+
+/*void light() {
+    DIFFUSE_LIGHT += clamp(dot(NORMAL, LIGHT), 0.0, 1.0) * ATTENUATION * LIGHT_COLOR;
+}*/
+

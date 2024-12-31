@@ -12,6 +12,8 @@ public partial class CubeSphereGenerator : Node {
 
 	private SurfaceTool meshGen = new ();
 	
+	[Export] private Material material;
+	
 	public override void _Ready() {}
 	
 	public override void _Process(double delta) {
@@ -27,7 +29,7 @@ public partial class CubeSphereGenerator : Node {
 		}
 	}
 
-	private void addMesh(Mesh mesh) {
+	private void addMesh(Mesh mesh, Material _material) {
 		MeshInstance3D meshInstance = new();
 		meshInstance.Mesh = mesh;
 		if (generateColliders) {
@@ -35,19 +37,16 @@ public partial class CubeSphereGenerator : Node {
 		}
 		AddChild(meshInstance);
 		meshInstance.Owner = GetTree().EditedSceneRoot;
+		meshInstance.SetMaterialOverride(_material);
 	}
 	
 	private void updateMesh() {
 		clearMeshes();
 		
-		var material = new StandardMaterial3D();
-		var randomColor = new Color(GD.Randf(), GD.Randf(), GD.Randf());
-		material.AlbedoColor = randomColor;
 		Mesh[] meshes = GenerateSphereMeshes();
 		
 		foreach (var mesh in meshes) {
-			mesh.SurfaceSetMaterial(0, material);
-			addMesh(mesh);
+			addMesh(mesh, material);
 		}
 		GD.Print("Mesh Updated");
 	}

@@ -1,12 +1,14 @@
-[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://bq2x2quw7lhkw"]
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://bq2x2quw7lhkw"]
 
-[ext_resource type="Shader" uid="uid://ctidg6jr5jptf" path="res://Scripts/Shaders/SphereTexture.gdshader" id="1_tgo74"]
-[ext_resource type="Texture2D" uid="uid://dutesj53p7g1f" path="res://Data/Heightmap.png" id="2_664j3"]
-[ext_resource type="Texture2D" uid="uid://dfj7dm47me3em" path="res://assets/Placeholder Earth.jpg" id="2_i0h48"]
+[ext_resource type="Shader" path="res://Scripts/Shaders/SphereTexture.gdshader" id="1_tgo74"]
+[ext_resource type="Texture2D" uid="uid://dfj7dm47me3em" path="res://assets/Placeholder Earth.jpg" id="2_3kvyi"]
+[ext_resource type="Texture2D" uid="uid://dutesj53p7g1f" path="res://Data/Heightmap.png" id="3_rrmgi"]
+[ext_resource type="Texture2D" uid="uid://cj0dqchs8nimu" path="res://Data/NormalMap.jpg" id="4_5yftw"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_tgo74")
-shader_parameter/_texture = ExtResource("2_i0h48")
-shader_parameter/height_map = ExtResource("2_664j3")
 shader_parameter/height_factor = 2.0
+shader_parameter/_texture = ExtResource("2_3kvyi")
+shader_parameter/height_map = ExtResource("3_rrmgi")
+shader_parameter/normal_map = ExtResource("4_5yftw")
