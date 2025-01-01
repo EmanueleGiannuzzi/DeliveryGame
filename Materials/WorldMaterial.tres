@@ -1,14 +1,18 @@
-[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://bq2x2quw7lhkw"]
+[gd_resource type="ShaderMaterial" load_steps=7 format=3 uid="uid://bq2x2quw7lhkw"]
 
-[ext_resource type="Shader" path="res://Scripts/Shaders/SphereTexture.gdshader" id="1_tgo74"]
-[ext_resource type="Texture2D" uid="uid://dfj7dm47me3em" path="res://assets/Placeholder Earth.jpg" id="2_3kvyi"]
-[ext_resource type="Texture2D" uid="uid://dutesj53p7g1f" path="res://Data/Heightmap.png" id="3_rrmgi"]
-[ext_resource type="Texture2D" uid="uid://cj0dqchs8nimu" path="res://Data/NormalMap.jpg" id="4_5yftw"]
+[ext_resource type="Shader" path="res://Scripts/Shaders/WorldShaderSplit.gdshader" id="1_12a2k"]
+[ext_resource type="Texture2D" uid="uid://b1nv0gn3ep8t8" path="res://assets/World Tiles/ColourWest_January.jpg" id="2_8qtim"]
+[ext_resource type="Texture2D" uid="uid://d0acrg1w58fye" path="res://assets/World Tiles/ColourEast_January.jpg" id="3_a2sr2"]
+[ext_resource type="Texture2D" uid="uid://dutesj53p7g1f" path="res://assets/Heightmap.png" id="3_rrmgi"]
+[ext_resource type="Texture2D" uid="uid://bhp08jpg6dk3o" path="res://assets/World Tiles/Normals West.jpg" id="5_i8oc8"]
+[ext_resource type="Texture2D" uid="uid://co8x5vbalkytr" path="res://assets/World Tiles/Normals East.jpg" id="6_hqt3l"]
 
 [resource]
 render_priority = 0
-shader = ExtResource("1_tgo74")
-shader_parameter/height_factor = 2.0
-shader_parameter/_texture = ExtResource("2_3kvyi")
+shader = ExtResource("1_12a2k")
+shader_parameter/height_factor = 4.0
+shader_parameter/_texture_left = ExtResource("2_8qtim")
+shader_parameter/_texture_right = ExtResource("3_a2sr2")
 shader_parameter/height_map = ExtResource("3_rrmgi")
-shader_parameter/normal_map = ExtResource("4_5yftw")
+shader_parameter/normal_map_left = ExtResource("5_i8oc8")
+shader_parameter/normal_map_right = ExtResource("6_hqt3l")

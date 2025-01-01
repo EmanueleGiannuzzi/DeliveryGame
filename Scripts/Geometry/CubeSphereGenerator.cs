@@ -25,7 +25,9 @@ public partial class CubeSphereGenerator : Node {
 
 	private void clearMeshes() {
 		foreach (var child in GetChildren()) {
-			child.QueueFree();
+			if (child is MeshInstance3D) {
+				child.QueueFree();
+			}
 		}
 	}
 
@@ -99,11 +101,11 @@ public partial class CubeSphereGenerator : Node {
 				meshGen.AddVertex(pointOnUnitSphere * radius);
 
 				if (x != resolution - 1 && y != resolution - 1) {
-					meshGen.AddIndex(i);                     // First triangle with reversed order
+					meshGen.AddIndex(i);
 					meshGen.AddIndex(i + resolution);
 					meshGen.AddIndex(i + resolution + 1);
 
-					meshGen.AddIndex(i);                     // Second triangle with reversed order
+					meshGen.AddIndex(i);
 					meshGen.AddIndex(i + resolution + 1);
 					meshGen.AddIndex(i + 1);
 				}
@@ -144,8 +146,7 @@ public partial class CubeSphereGenerator : Node {
 		return new Vector3(p.X, p.Z, p.Y);
 	}
 	
-	private static Vector3 cubifyFace(Vector3 p)
-	{
+	private static Vector3 cubifyFace(Vector3 p) {
 		const float inverseSqrt2 = 0.70710676908493042f;
 
 		float a2 = p.X * p.X * 2.0f;

@@ -6,6 +6,9 @@ public partial class PlayerController : Node3D {
 	[Export] private float boostSpeed = 1f;
 	[Export] private float steerSpeed = 2f;
 	
+	public delegate void OnPackageDropped(float latitude, float longitude);
+	public event OnPackageDropped OnPackageDroppedEvent;
+	
 	public override void _Ready() {
 		
 	}
@@ -24,22 +27,22 @@ public partial class PlayerController : Node3D {
 		float steerAmount = (float)(steerDir * steerSpeed * delta);
 		updateRotation(steerAmount);
 
-		if (Input.IsActionPressed("Drop")) {
+		if (Input.IsActionJustPressed("Drop")) {
 			handleDrop();
 		}
 	}
 
-	private static (double longitude, double latitude) getGeoCoordsFromPointOnSphere(Vector3 point) {
+	private static (float longitude, float latitude) getGeoCoordsFromPointOnSphere(Vector3 point) {
 		Vector3 normalized = point.Normalized();
-		double latitude = Math.Asin(normalized.Y) * (180.0 / Math.PI);
-		double longitude = Math.Atan2(normalized.Z, normalized.X) * (180.0 / Math.PI);
+		float latitude = Mathf.Asin(normalized.Y) * (180f / Mathf.Pi);
+		float longitude = Mathf.Atan2(normalized.Z, normalized.X) * (180f / Mathf.Pi);
 
 		return (longitude, latitude);
 	}
 
 	private void handleDrop() {
 		var geoCoords = getGeoCoordsFromPointOnSphere(Transform.Basis.Z);
-		GD.Print($"longitude: {geoCoords.longitude}, latitude: {geoCoords.latitude}");
+		OnPackageDroppedEvent?.Invoke(geoCoords.latitude, geoCoords.longitude);
 	}
 
 	private void updatePosition(float movementSpeed) {
