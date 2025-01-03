@@ -1,0 +1,151 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6odsjd3cut18"]
+
+[ext_resource type="Script" path="res://Scripts/UI/MainMenu.cs" id="1_beka5"]
+[ext_resource type="Texture2D" uid="uid://dw6qovprby4nb" path="res://assets/keyboard-button.png" id="2_yuyib"]
+[ext_resource type="Texture2D" uid="uid://dnrb43rsblll4" path="res://assets/wad_key.png" id="3_11ykb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t42m1"]
+font_size = 100
+outline_size = 25
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("pausedLabel", "playButton", "volumeSlider", "volumeLabel", "difficultyLabel", "difficultyGroup")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_beka5")
+pausedLabel = NodePath("MarginContainer/MarginContainer/PausedLabel")
+playButton = NodePath("MarginContainer/VBoxContainer/PlayButton")
+volumeSlider = NodePath("MarginContainer/VBoxContainer/V_Volume/VolumeSlider")
+volumeLabel = NodePath("MarginContainer/VBoxContainer/V_Volume/VolumeLabel")
+difficultyLabel = NodePath("MarginContainer/VBoxContainer/V_Difficulty/HBoxContainer/DifficultyLabel")
+difficultyGroup = NodePath("MarginContainer/VBoxContainer/V_Difficulty")
+
+[node name="TutorialDrop" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -532.0
+offset_top = -512.0
+offset_right = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.355, 0.355)
+pivot_offset = Vector2(512, 512)
+texture = ExtResource("2_yuyib")
+stretch_mode = 4
+
+[node name="TutorialMovement" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -540.0
+offset_right = 660.0
+offset_bottom = -28.0
+grow_vertical = 0
+scale = Vector2(0.355, 0.355)
+pivot_offset = Vector2(0, 512)
+texture = ExtResource("3_11ykb")
+stretch_mode = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.470588)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = -395
+
+[node name="PausedLabel" type="Label" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "PAUSED"
+label_settings = SubResource("LabelSettings_t42m1")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(270.585, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 25
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayButton" type="Button" parent="MarginContainer/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "PLAY"
+
+[node name="V_Difficulty" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="DifficultyLabel" type="Label" parent="MarginContainer/VBoxContainer/V_Difficulty"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Difficulty"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/V_Difficulty"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PrevDifficultyButton" type="Button" parent="MarginContainer/VBoxContainer/V_Difficulty/HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "◁"
+
+[node name="DifficultyLabel" type="Label" parent="MarginContainer/VBoxContainer/V_Difficulty/HBoxContainer"]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+text = "NORMAL"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="NextDifficultyButton" type="Button" parent="MarginContainer/VBoxContainer/V_Difficulty/HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "▷"
+
+[node name="V_Volume" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VolumeLabel" type="Label" parent="MarginContainer/VBoxContainer/V_Volume"]
+layout_mode = 2
+text = "Volume: 0"
+horizontal_alignment = 1
+
+[node name="VolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer/V_Volume"]
+layout_mode = 2
+value = 50.0
+rounded = true
+
+[node name="QuitButton" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "QUIT"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/PlayButton" to="." method="onPlayButtonPressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/V_Difficulty/HBoxContainer/PrevDifficultyButton" to="." method="onPrevDiffButtonPressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/V_Difficulty/HBoxContainer/NextDifficultyButton" to="." method="onNextDiffButtonPressed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/V_Volume/VolumeSlider" to="." method="onVolumeChanged"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuitButton" to="." method="onQuitButtonPressed"]

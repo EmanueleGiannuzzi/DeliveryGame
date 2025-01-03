@@ -1,6 +1,7 @@
 using Godot;
 using Godot.Collections;
 using Array = Godot.Collections.Array;
+using Cities = Godot.Collections.Dictionary<string, Godot.Collections.Array>;
 
 [GlobalClass, Tool]
 public partial class CitiesDataResource : Resource {
@@ -8,7 +9,7 @@ public partial class CitiesDataResource : Resource {
 	private bool _loadJsonButton;
 
 	[Export]
-	public bool LoadJsonButton {
+	private bool loadJsonButton {
 		get => _loadJsonButton;
 		set {
 			if (value) {
@@ -19,7 +20,7 @@ public partial class CitiesDataResource : Resource {
 	}
 
 	[ExportCategory("Data")]
-	[Export] public Dictionary<string, Array<float>> citiesData { get; private set; } = new ();
+	[Export] public Dictionary<string, Cities> citiesData { get; private set; } = new ();
 
 	private void onLoadJsonButton() {
 		loadJson(JsonFileLocation);
@@ -53,18 +54,26 @@ public partial class CitiesDataResource : Resource {
 
 		foreach (var featureObj in jsonCitiesData) {
 			var feature = featureObj.AsGodotDictionary<string, Variant>();
-			if (feature.ContainsKey("properties") &&
-				feature.TryGetValue("geometry", out var value)) {
-				var properties = feature["properties"].AsGodotDictionary<string, Variant>();
-				var geometry = value.AsGodotDictionary<string, Variant>();
-
-				var cityName = properties.TryGetValue("name", out var nameObj) ? nameObj.AsString() : "Unknown";
-				var coordinates = geometry.ContainsKey("coordinates") ? geometry["coordinates"].AsGodotArray<float>() : null;
-
-				if (coordinates != null) {
-					GD.Print($"City name: {cityName}");
-					if(!citiesData.ContainsKey(cityName))
-						this.citiesData.Add(cityName, coordinates);
+			if (feature.TryGetValue("properties", out var propertiesObj)) {
+				var properties = propertiesObj.AsGodotDictionary<string, Variant>();
+				if (properties.TryGetValue("featurecla", out var featureCLAObj) &&
+					properties.TryGetValue("latitude", out var latitudeObj) &&
+					properties.TryGetValue("longitude", out var longitudeObj) &&
+					properties.TryGetValue("name", out var nameObj) &&
+					properties.TryGetValue("sov_a3", out var countryIdObj)
+					) {
+					Array coordinates = new Array();
+					coordinates.Add(latitudeObj.AsSingle());
+					coordinates.Add(longitudeObj.AsSingle());
+					coordinates.Add(countryIdObj.AsString().ToLower());
+					string name = nameObj.AsString();
+					
+					string featureCLA = featureCLAObj.AsString();
+					if(!citiesData.ContainsKey(featureCLA))
+						citiesData.Add(featureCLA, new Cities());
+					
+					if(!citiesData[featureCLA].ContainsKey(name))
+						this.citiesData[featureCLA].Add(name, coordinates);
 				}
 			}
 		}

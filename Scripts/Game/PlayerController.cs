@@ -1,20 +1,41 @@
 using Godot;
-using System;
 
 public partial class PlayerController : Node3D {
+	[Export] private GpuParticles3D rocketParticles;
+	[Export] private AudioStreamPlayer rocketSFX;
+	[Export] private float rocketAttenuation = -2f;
+	
 	[Export] private float speed = 0.25f;
 	[Export] private float boostSpeed = 1f;
 	[Export] private float steerSpeed = 2f;
-	
+
+	private bool _paused = false;
+	public bool Paused {
+		get => _paused;
+		set {
+			_paused = value;
+			rocketParticles.Emitting = !_paused;
+			rocketSFX.VolumeDb = _paused ? 0f : rocketAttenuation;
+		}
+	}
+
 	public delegate void OnPackageDropped(float latitude, float longitude);
 	public event OnPackageDropped OnPackageDroppedEvent;
-	
 	public override void _Ready() {
-		
+		rocketSFX.VolumeDb = rocketAttenuation;
 	}
-	
+
 	public override void _PhysicsProcess(double delta) {
+		if(Paused)
+			return;
+		
 		bool boost = Input.IsActionPressed("Boost");
+		if (Input.IsActionJustPressed("Boost")) {
+			rocketSFX.VolumeDb -= rocketAttenuation;
+		}
+		else if (Input.IsActionJustReleased("Boost")) {
+			rocketSFX.VolumeDb += rocketAttenuation;
+		}
 		float actualSpeed = boost ? boostSpeed : speed;
 		float movementSpeed = (float)(actualSpeed * delta);
 		updatePosition(movementSpeed);
@@ -46,7 +67,7 @@ public partial class PlayerController : Node3D {
 	}
 
 	private void updatePosition(float movementSpeed) {
-		Transform = Transform.RotatedLocal(Vector3.Up, movementSpeed);
+		Transform = Transform.RotatedLocal(Vector3.Down, movementSpeed);
 	}
 
 	private void updateRotation(float rotationSpeed) {

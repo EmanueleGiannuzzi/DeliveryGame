@@ -1,0 +1,16 @@
+[gd_scene load_steps=8 format=3 uid="uid://bxngomwavjfxm"]
+
+[ext_resource type="Script" path="res://Scripts/Audio/music_player.gd" id="1_xtt6o"]
+[ext_resource type="AudioStream" uid="uid://b7aviy5oq271q" path="res://assets/Audio/Music/christmas-251281.mp3" id="2_rg6ew"]
+[ext_resource type="AudioStream" uid="uid://du3t2kq5kuo1" path="res://assets/Audio/Music/christmas-jazz-royalty-free-music-joyful-bells-rhapsody-274782.mp3" id="3_4cxmg"]
+[ext_resource type="AudioStream" uid="uid://bbt0yi1pddx1p" path="res://assets/Audio/Music/christmas-jazz-sleigh-bell-swing-271868.mp3" id="4_qv60n"]
+[ext_resource type="AudioStream" uid="uid://iy865gkha0ao" path="res://assets/Audio/Music/christmas-miracle-249611.mp3" id="5_ogkn4"]
+[ext_resource type="AudioStream" uid="uid://bmgjv8k4xjkxa" path="res://assets/Audio/Music/christmas-royalty-free-music-the-starry-noel-274721.mp3" id="6_6js5l"]
+[ext_resource type="AudioStream" uid="uid://d2w7r8xffc0bb" path="res://assets/Audio/Music/christmas-winter-whimsy-264703.mp3" id="7_1v3s1"]
+
+[node name="Global" type="Node"]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+script = ExtResource("1_xtt6o")
+music_tracks = Array[AudioStream]([ExtResource("2_rg6ew"), ExtResource("3_4cxmg"), ExtResource("4_qv60n"), ExtResource("5_ogkn4"), ExtResource("6_6js5l"), ExtResource("7_1v3s1")])

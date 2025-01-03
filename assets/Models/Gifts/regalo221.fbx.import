@@ -1,0 +1,346 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://burg7tqixuwj0"
+path="res://.godot/imported/regalo221.fbx-a959ab7f04b57bbf0378e650f4a8de90.scn"
+
+[deps]
+
+source_file="res://assets/Models/Gifts/regalo221.fbx"
+dest_files=["res://.godot/imported/regalo221.fbx-a959ab7f04b57bbf0378e650f4a8de90.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=true
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"materials": {
+"Gift2.1": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/Models/Gifts/Materials/Gift2.1.tres"
+},
+"Gift2.2": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/Models/Gifts/Materials/Gift2.2.tres"
+},
+"gift1": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/Models/Gifts/Materials/gift1.tres"
+},
+"gift1.1": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/Models/Gifts/Materials/gift1.1.tres"
+},
+"gift3": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/Models/Gifts/Materials/gift3.tres"
+},
+"gift3.2": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/Models/Gifts/Materials/gift3.2.tres"
+},
+"gift4.1": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/Models/Gifts/Materials/gift4.1.tres"
+},
+"gift5": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/Models/Gifts/Materials/gift5.tres"
+},
+"gift6.1": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/Models/Gifts/Materials/gift6.1.tres"
+},
+"gift7": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/Models/Gifts/Materials/gift7.tres"
+},
+"gift7.2": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/Models/Gifts/Materials/gift7.2.tres"
+},
+"gift8": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/Models/Gifts/Materials/gift8.tres"
+},
+"gift9": {
+"use_external/enabled": true,
+"use_external/path": "res://assets/Models/Gifts/Materials/gift9.tres"
+}
+},
+"meshes": {
+"Cube_068": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/Cube_068.res"
+},
+"Cube_069": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/Cube_069.res"
+},
+"Cube_070": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/Cube_070.res"
+},
+"Cube_071": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/Cube_071.res"
+},
+"Cube_072": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/Cube_072.res"
+},
+"Cube_073": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/Cube_073.res"
+},
+"Cube_074": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/Cube_074.res"
+},
+"Cube_075": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/Cube_075.res"
+},
+"Cube_076": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/Cube_076.res"
+},
+"Cube_077": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/Cube_077.res"
+},
+"Cube_078": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/Cube_078.res"
+},
+"Cube_079": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/Cube_079.res"
+},
+"Cube_080": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/Cube_080.res"
+},
+"Cube_081": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/Cube_081.res"
+},
+"Cube_082": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/Cube_082.res"
+},
+"Cube_084": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/Cube_084.res"
+},
+"Cube_085": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/Cube_085.res"
+},
+"Cube_086": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/Cube_086.res"
+},
+"Cube_088": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/Cube_088.res"
+},
+"NurbsPath_002": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/NurbsPath_002.res"
+},
+"NurbsPath_004": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/NurbsPath_004.res"
+},
+"NurbsPath_005": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/NurbsPath_005.res"
+},
+"NurbsPath_006": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/NurbsPath_006.res"
+},
+"NurbsPath_007": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/NurbsPath_007.res"
+},
+"NurbsPath_008": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/NurbsPath_008.res"
+},
+"NurbsPath_009": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/NurbsPath_009.res"
+},
+"NurbsPath_010": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/NurbsPath_010.res"
+},
+"NurbsPath_024": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 60.0,
+"lods/normal_split_angle": 25.0,
+"save_to_file/enabled": true,
+"save_to_file/path": "res://assets/Models/Gifts/Meshes/NurbsPath_024.res"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1

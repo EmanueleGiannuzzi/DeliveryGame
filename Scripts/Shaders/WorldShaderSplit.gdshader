@@ -33,8 +33,8 @@ vec4 get_split_texture(sampler2D tex_left, sampler2D tex_right, vec2 uv) {
 
 void vertex() {
     world_position = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
-    world_position.y = -world_position.y;
-    world_position.z = -world_position.z;
+    world_position.y = world_position.y;
+    world_position.z = world_position.z;
 
     vec2 uv = pointOnSphereToUV(world_position);
 
